@@ -1,5 +1,5 @@
 # SQL SIMULATOR
-The SQL SIMULATOR enables you to query a CVS database file and obtain results in a tabular manner.\ 
+The SQL SIMULATOR enables you to query a CVS database file and obtain results in a tabular manner. <br/> 
 The script can be run in both the terminal and the browser. Terminal options given as '--option-name', browser options are given as a url query.
 
 ## 1. MANDATORY OPTIONS
