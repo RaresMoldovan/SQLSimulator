@@ -1,16 +1,16 @@
 # SQL SIMULATOR
-The SQL SIMULATOR enables you to query a CVS database file and obtain results in a tabular manner. 
+The SQL SIMULATOR enables you to query a CVS database file and obtain results in a tabular manner.\ 
 The script can be run in both the terminal and the browser. Terminal options given as '--option-name', browser options are given as a url query.
 
 ## 1. MANDATORY OPTIONS
-* FROM 'file'\ 
+* FROM 'file' <br/> 
 ~ file must be a csv file which contains the column names on the first line and the rows on the following lines
 * SELECT col1,col2,...,coln\
-~ col1,...,coln must be column names provided in the csv file.
+~ col1,...,coln must be column names provided in the csv file.\
 ~ The select option is redundant in case of an aggregate option required.
 * OUTPUT screen|csv\
-~ screen: displays the results at the standard output in JSON format.
-~ csv: displays the results in a csv file provided with option OUTPUT-FILE.
+~ screen: displays the results at the standard output in JSON format.\
+~ csv: displays the results in a csv file provided with option OUTPUT-FILE.\
 ## 2.VOLUNTARY OPTIONS
 2.1. OUTPUT RELATED
 * OUTPUT-FILE 'file'\
