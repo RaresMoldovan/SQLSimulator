@@ -58,6 +58,6 @@ The script can be run in both the terminal and the browser. Terminal options giv
 ~ column: must be an available column, the summation/product/concatenation' will be applied on it.
 * AGGREGATE-LIST-GLUE 'glue'\
 ~ glue: must be a valid character/set of characters which will be used to concatenate the column values, mandatory 
-for option AGGREGATE-LIST
+for option AGGREGATE-LIST <br/>
 !ATTENTION: The SELECT option becomes redundant as the aggregate option will output a single row with all columns and
 an additional operation column.
