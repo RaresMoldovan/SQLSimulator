@@ -1,0 +1,63 @@
+Uses additional files persons.csv(csv file with person information) and cutFirstLetter.php (for function mapping).
+--------FOR TERMINAL-------
+I. HELP
+php sql.ph --help
+
+II. ERRORS
+(Errors are provided in the standard array(array) format for compactness)
+--missing options
+php sql.php
+php sql.php --select '*' --from abc
+php sql.php --select id --from persons.csv --output csv
+php sql.php --select id --from persons.csv --output screen --sort-mode alpha
+php sql.php --select id --from persons.csv --output screen --map-function-column abc
+
+--wrong arguments to options
+php sql.php --select id --from persons.csv --output abc
+php sql.php --select id --from persons.csv --output screen --sort-column id --sort-mode alpha --sort-direction meh
+php sql.php --select id --from persons.csv --output screen --multi-sort a,b,c --multi-sort-dir asc,des,as
+
+--wrong column names to options
+php sql.php --select i --from persons.csv --output screen --multi-sort a,b,c --multi-sort-dir asc,desc,asc
+php sql.php --select '*' --from persons.csv --output screen --lowercase-column dgf
+php sql.php --select '*' --from persons.csv --output screen --where 'i>4'
+php sql.php --select '*' --from persons.csv --output screen --unique ab
+
+III. FUNCTIONAL
+--simple select + where
+php sql.php --select '*' --from persons.csv --output screen
+php sql.php --select '*' --from persons.csv --output screen --where 'age<21'
+php sql.php --select name --from persons.csv --output screen --where 'name<>rares'
+
+--function mapping, case mapping and column sorting
+php sql.php --select name,id --from persons.csv --output screen --where 'age>19' --titlecase-column name --column-sort asc
+php sql.php --select name,id,age --from persons.csv --output screen --where 'age>19' --titlecase-column name --column-sort asc
+php sql.php --select name,id,age --from persons.csv --output screen --where 'age=20' --map-function cutFirstLetter --map-function-column name 
+
+--sorting and multi-sorting
+php sql.php --select '*' --from persons.csv --output screen --where 'age=20' --sort-column name --sort-mode alpha --sort-direction asc
+php sql.php --select '*' --from persons.csv --output screen --where 'id>1' --sort-column age --sort-mode numeric --sort-direction desc
+php sql.php --select '*' --from persons.csv --output screen --multi-sort age,name --multi-sort-dir asc,desc
+php sql.php --select '*' --from persons.csv --output screen --multi-sort age,name --multi-sort-dir desc,asc
+
+--aggregates
+php sql.php --select '*' --from persons.csv --output screen --multi-sort age,name --multi-sort-dir desc,asc --aggregate-sum age
+php sql.php --select '*' --from persons.csv --output screen --multi-sort age,name --multi-sort-dir desc,asc --aggregate-product id
+php sql.php --select '*' --from persons.csv --output screen --multi-sort age,name --multi-sort-dir desc,asc --aggregate-list name --aggregate-list-glue ' and '
+
+------FOR BROWSER------
+Preconditions: virtual host with sql.com
+Note: I added a few examples because the functionality remains the same as in the console mode. The results are displayed in an HTML table.
+
+I.Errors
+http://sql.com/sql.php/?select=id,name,age&from=persons.csv&sort-column=name&sort-mode=alpha
+http://sql.com/sql.php/?select=id,nam
+
+II. 
+http://sql.com/sql.php/?select=id,name,age&from=persons.csv&sort-column=name&sort-mode=alpha&sort-direction=asc&where=age%3C%3E20&uppercase-column=name
+http://sql.com/sql.php/?select=*&from=persons.csv&titlecase-column=name&where=id%3C%3E4
+
+
+
+
+
