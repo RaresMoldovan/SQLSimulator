@@ -10,7 +10,7 @@ The script can be run in both the terminal and the browser. Terminal options giv
 ~ The select option is redundant in case of an aggregate option required.
 * OUTPUT screen|csv\
 ~ screen: displays the results at the standard output in JSON format.\
-~ csv: displays the results in a csv file provided with option OUTPUT-FILE.\
+~ csv: displays the results in a csv file provided with option OUTPUT-FILE.
 ## 2.VOLUNTARY OPTIONS
 2.1. OUTPUT RELATED
 * OUTPUT-FILE 'file'\
@@ -34,7 +34,7 @@ The script can be run in both the terminal and the browser. Terminal options giv
 * SORT-MODE natural|alpha|numeric\
 ~ natural: sorts the data based on natural ordering (2 comes before 10)\
 ~ alpha: sorts the data based on alphabetical ordering (2 comes after 10)\
-~ numeric: sorts the data based on numeric comparison.\
+~ numeric: sorts the data based on numeric comparison.
 * SORT-DIR asc|desc\
 ~ asc: sorts the rows in ascending order.\
 ~ desc: sorts the rows in descending order.\
